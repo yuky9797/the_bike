@@ -25,10 +25,11 @@ class ofApp : public ofxiOSApp {
 
     int bikex;
     int bikey;
-    int groundbeginy;
-    int groundendy;
+    int x[1000];
+    int y[1000];
     int time;
     int n;
+    int hold;
 };
 
 

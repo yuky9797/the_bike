@@ -3,10 +3,12 @@
 void ofApp::setup(){	
     ofBackground(0);
     
-    groundbeginy = 500;
-    groundendy = 500;
-    bikex = 150;
-    bikey = (groundbeginy+groundendy)/2-100;
+    for(int i =1; i==1000; i++){
+        x[i]=i;
+        y[i]=400;
+    }
+    bikex = x[200];
+    bikey = 400;
     time=0;
     n = 50000;
 
@@ -22,7 +24,9 @@ void ofApp::update(){
 void ofApp::draw(){
     ofSetColor(100, 100, 100);
     ofSetLineWidth(5);
-    ofLine(0,groundbeginy,ofGetWidth(),groundendy);
+    for(int i =0; i==1000; i++){
+        ofCircle(x[i],y[i],1);
+    }
     ofSetColor(20, 100, 155);
     ofRect(bikex, bikey, 100, 100);
     if(n+1==time){
@@ -36,9 +40,10 @@ void ofApp::draw(){
     }else if(n+5==time){
         bikey = bikey - 20;
     }
-    else if(n+50==time){
-        bikey = (groundbeginy+groundendy)/2-100;
-    }
+    else if(n+10==time){
+            bikey = y[200];
+        
+        }
 }
 
 //--------------------------------------------------------------
